@@ -19,6 +19,8 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('search/', search_views.search, name='search'),
 
+    path('', include('allauth.urls')),
+
 ]
 
 

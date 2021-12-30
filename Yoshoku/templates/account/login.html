@@ -1,0 +1,51 @@
+{% load static %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+<!-- head -->
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/member/account.css' %}">
+{% endblock %}
+
+{% block head_title %}{% trans "" %}{% endblock %}
+<!-- /head -->
+
+<!-- body -->
+{% block content %}
+<div class="container right-panel-active">
+
+    <!-- Sign Up -->
+	<div class="container__form container--signup">
+		
+	</div>
+
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+        
+    </div>
+
+    <!-- Overlay -->
+    <div class="container__overlay">
+        <div class="overlay">
+
+            <div class="overlay__panel overlay--left">
+                <button class="btn" id="signIn">Sign In</button>
+            </div>
+
+            <div class="overlay__panel overlay--right">
+                <button class="btn" id="signUp">Sign Up</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+<!-- /body -->
+
+<!-- Footer Scripts
+============================================= -->
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/member.js' %}"></script>
+{% endblock %}
