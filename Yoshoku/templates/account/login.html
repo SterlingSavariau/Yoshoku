@@ -17,12 +17,36 @@
 
     <!-- Sign Up -->
 	<div class="container__form container--signup">
-		
+		<form action="{% url 'account_signup' %}" class="form" id="form1" method="post">
+			<h2 class="form__title">Sign Up</h2>
+
+            {% csrf_token %}
+            {{ signupform.as_p }}
+
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+			<button class="btn" type="submit">{% trans "Sign Up" %}</button>
+		</form>
 	</div>
 
     <!-- Sign In -->
     <div class="container__form container--signin">
-        
+        <form action="{% url 'account_login' %}" class="form" id="form2" method="POST">
+			<h2 class="form__title">Sign In</h2>
+
+			{% csrf_token %}
+            {{ form.as_p }}
+
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+			<a href="{% url 'account_reset_password' %}" class="link">{% trans "Forgot Password?" %}</a>
+
+			<button class="btn" type="submit">{% trans "Sign In" %}</button>
+		</form>
     </div>
 
     <!-- Overlay -->
