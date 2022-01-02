@@ -339,3 +339,5 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_USERNAME_VALIDATORS = None
 ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.form.CustomSignupForm'
+ACCOUNT_ADAPTER= 'accounts.adapter.RestrictEmailAdapter'
+ACCOUNT_ADAPTER = 'accounts.adapter.UsernameMaxAdapter'
